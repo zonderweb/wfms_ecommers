@@ -1,0 +1,183 @@
+
+.headerTop {
+	@include cf;
+
+	padding: 25px 0;
+	border-bottom: 1px solid $light-gray;
+	margin-bottom: 15px;
+
+	@media screen and (max-width: 1200px) {
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+
+	@media screen and (max-width: 480px) {}
+}
+
+.headerLogo {
+	float: left;
+	margin-top: 10px;
+	font-size: 2.3rem;
+	text-transform: uppercase;
+	color: $title-gray;
+	text-decoration: none;
+	font-family: $font-condensed;
+
+	&:hover {
+		color: $main-red;
+	}
+
+	@media screen and (max-width: 480px) {
+		float: none;
+		text-align: center;
+		display: block;
+		margin-bottom: 2.5rem;
+		margin-top: 0;
+	}
+}
+
+.phoneCart-wrapper {
+	float: right;
+
+	@media screen and (max-width: 480px) {
+		float: none;
+	}
+}
+
+.phoneNum,
+.shopCart {
+	float: left;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+
+	a {
+		text-decoration: none;
+		color: $main-gray;
+		font-weight: 600;
+
+		&:hover {
+			color: $main-red;
+		}
+	}
+
+	i {
+		font-size: 1.8rem;
+		font-family: $font-icon;
+		margin-right: 10px;
+		vertical-align: middle;
+		color: $main-red;
+	}
+
+	@media screen and (max-width: 480px) {
+		float: none;
+	}
+
+}
+
+.phoneNum {
+	margin-top: 12px;
+}
+
+.phoneNum__number {
+	@media screen and (max-width: 480px) {
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 2.5rem;
+	}
+}
+
+
+.shopCart {
+	padding: 10px 25px;
+	margin-left: 25px;
+	border: 1px solid $light-gray;
+
+	@media screen and (max-width: 480px) {
+		margin-left: 0;
+	}
+}
+
+.shopCart__sum {
+
+	a {
+		margin-left: 10px;
+	}
+
+	@media screen and (max-width: 480px) {
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// Menu
+
+.headerBottom {
+	@include cf;
+
+	@media screen and (max-width: 1200px) {
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+}
+
+.mainNav {
+	@media screen and (max-width: 768px) {
+	}
+}
+
+.mainNav__item {
+	float: left;
+	margin-right: 35px;
+
+	@media screen and (max-width: 768px) {
+		padding-bottom: 1.5rem;
+	}
+}
+
+.mainNav__link {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $main-gray;
+	font-size: 1.4rem;
+	line-height: 2rem;
+
+	&--active,
+	&:hover {
+		color: $main-red;
+	}
+}
+
+// Форма поиска
+
+.searchForm {
+	float: left;
+	margin-left: 7px;
+
+	@media screen and (max-width: 768px) {
+		float: none;
+		@include break;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+	}
+}
+
+.searchForm__btn {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.searchForm__input {
+	border: none;
+	color: $main-gray;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+
+	@media screen and (max-width: 768px) {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		line-height: 1.8rem;
+		width: 90%;
+	}
+}

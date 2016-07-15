@@ -1,0 +1,504 @@
+@import "app/libs/susy/sass/susy"; // Susy
+@import "variables.scss"; // Подключение переменных
+@import "mediaquaries.scss"; // Медиа выражения
+
+$susy: (
+	columns: 12,
+	gutters: .428,
+	container: 1170px,
+	global-box-sizing: border-box,
+	debug: (image: hide)
+);
+
+@include border-box-sizing;
+
+html {
+	font-size: $html-size-base;
+	line-height: $html-height-base;
+}
+
+body {
+	font-family: $font-main;
+	font-size: 1.4rem;
+	color: $main-gray;
+}
+
+@mixin cf {
+	&:after {
+		content:"";
+		display: block;
+		clear: both;
+	}
+}
+
+.centerBox {
+	@include container();
+
+	margin-bottom: 15px;
+}
+
+@import "header.scss"; // шапка
+@import "slider.scss"; // Слайдер
+
+.main-category {
+	@include container();
+
+	margin-bottom: 6rem;
+	
+	@media screen and (max-width: 600px) {
+		margin-bottom: 3rem;
+	}
+}
+
+.category-previev {
+	@include span(4);
+
+	&:nth-child(3) {
+		@include last;
+	}
+
+	@media screen and (max-width: 600px) {
+		@include span(12);
+		margin-bottom: 3rem;
+	}
+
+	p {
+		color: $main-gray;
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+		font-family: $font-condensed;
+	}
+}
+
+.category-previev__img {
+	margin-bottom: 22px;
+	display: block;
+
+	img {
+	width: 100%;
+	}
+}
+
+.category-previev__title {
+	font-size: 2.3rem;
+	margin-bottom: 14px;
+	text-transform: uppercase;
+	color: $main-red;
+	line-height: 2.3rem;
+
+	@media screen and (max-width: 768px) {
+		font-size: 1.9rem;
+		line-height: 1.9rem;
+	}
+}
+
+.category-previev__link {
+	color: $main-red;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.pop-product {
+	@include container();
+
+	margin-bottom: 6.5rem;
+
+	@media screen and (max-width: 768px) {
+		margin-bottom: 3.5rem;
+	}
+}
+
+.widget-product {
+	@include span(3);
+
+	&:nth-child(4n+1) {
+		@include last;
+	}
+
+
+	@media screen and (max-width: 800px) {
+		@include span(6);
+
+		&:nth-child(2n+1) {
+			@include last;
+		}
+	margin-bottom: gutter();
+	}
+
+	@media screen and (max-width: 600px) {
+		@include span(12);
+	}
+}
+
+.pop-product__img {
+	img {
+		width: 100%;
+	}
+}
+
+.popular-title {
+	font-family: $font-condensed;
+	font-size: 2.3rem;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 45px;
+}
+
+.desc-product-wrapper {
+	border: 1px solid $light-gray;
+	border-top: none;
+	padding: 20px;
+
+	p {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+}
+
+.widget-product__title {
+	font-weight: 600;
+	text-transform: uppercase;
+	color: $main-gray;
+	font-size: 1.8rem;
+	line-height: 2rem;
+	margin-bottom: 5px;
+}
+
+.widget-product__link {
+	text-decoration: none;
+	color: $main-gray;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.widget-category__title {
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+	text-transform: uppercase;
+	font-style: italic;
+	margin-bottom: 7px;
+}
+
+.widget-product__price--wrapper {
+	border-top: 1px solid $light-gray;
+	margin-top: 15px;
+	padding-top: 13px;
+	position: relative;
+}
+
+.widget-product__price {
+	color: $main-red;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.widget-product__addcart {
+	color: $main-gray;
+	font-size: 1.8rem;
+	position: absolute;
+	right: 0;
+	top: 9px;
+
+	&:hover {
+		color: $main-red;
+	}
+}
+
+.main-info {
+	@include container();
+
+	margin-bottom: 3rem;
+}
+
+.about-us {
+	@include span(7);
+
+	@media screen and (max-width: 1200px) {
+		padding-left: 1.5em;
+	}
+
+	@media screen and (max-width: 768px) {
+		@include span(12);
+		padding-right: 1.5rem;
+	}
+
+	p {
+		font-size: 1.4rem;
+		line-height: 1.8rem;
+		margin-bottom: 2.3rem;
+		font-style: italic;
+	}
+}
+
+
+.about-us__title {
+	font-size: 2.3rem;
+	line-height: 2.3rem;
+	font-weight: 700;
+	margin-bottom: 3.5rem;
+}
+
+.map {
+	@include span(5 last);
+
+	@media screen and (max-width: 1200px) {
+		padding-right: 1.5em;
+	}
+
+	@media screen and (max-width: 768px) {
+		@include span(12);
+		padding-left: 1.5rem;
+	}
+}
+
+.map-wrapper {
+	position: relative;
+	height: 0;
+	padding-bottom: 75%;
+	overflow: hidden;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+.subscribe {
+	background: $main-red;
+	padding: 3.2rem 0;
+}
+
+.subscribe-wrap {
+	@include container();
+}
+
+.subscribe-slogan {
+	@include span(7);
+
+	@media screen and (max-width: 1200px) {
+		padding-left: 1.5rem;
+	}
+
+	@media screen and (max-width: 945px) {
+		@include span(12);
+		text-align: center;
+		margin-bottom: gutter();
+	}
+}
+
+.subscribe-slogan__text {
+	font-size: 2.3rem;
+	line-height: 2.4rem;
+	color: $white-text;
+	font-family: $font-condensed;
+	text-transform: uppercase;
+	margin-top: 1.3rem;
+
+	span {
+		font-weight: 700;
+	}
+}
+
+.subsribe-form {
+	@include span(5 last)
+
+	@media screen and (max-width: 945px) {
+		@include span(12);
+	}
+}
+
+.form-sbsc {
+	float: right;
+
+	@media screen and (max-width: 1200px) {
+		padding-right: 1.5rem;
+	}
+
+	@media screen and (max-width: 945px) {
+		float: none;
+		margin-right: auto;
+		margin-left: auto;
+		display: table;
+		text-align: center;
+	}
+}
+
+.input-sbsc {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	padding: 1.4rem 2.3rem;
+	border: none;
+	min-width: 24.6rem;
+
+	@media screen and (max-width: 400px) {
+		margin-bottom: 1.5rem;
+	}
+}
+
+.btn-sbsc {
+	background: $light-red;
+	border: none;
+	color: $white-text;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	padding: 1.4rem 2.3rem;
+	margin-left: 2rem;
+	cursor: pointer;
+}
+
+.footer {
+	background:$footer-bg;
+	padding: 4.5rem 0;
+}
+
+.footer-wrap {
+	@include container();
+
+	h3 {
+		text-transform: uppercase;
+		color: $white-text;
+		font-size: 2.3rem;
+		line-height: 2rem;
+		margin-bottom: 2.5rem;
+	}
+
+	p {
+		color: $main-gray;
+		font-size: 1.4rem;
+		line-height: 2rem;
+		margin-bottom: 2.5rem;
+	}
+}
+
+.our-stores {
+	@include span(3);
+
+	@media screen and (max-width: 1200px) {
+		padding-left: 1.5rem;
+	}
+
+	@media screen and (max-width: 800px) {
+		@include span(6);
+		
+	}
+
+	@media screen and (max-width: 500px) {
+		@include span(12);
+	}
+}
+
+.blog-post {
+	@include span(3);
+
+	a {
+		text-decoration: none;
+		color: $white-text;
+		font-weight: 500;
+		line-height: 1.8rem;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	@media screen and (max-width: 800px) {
+		@include span(6 last);
+		}
+
+	@media screen and (max-width: 500px) {
+		@include span(12);
+		padding-left: 1.5rem;
+	}
+}
+
+.support {
+	@include span(3);
+
+	@media screen and (max-width: 800px) {
+		@include span(6);
+		@include break;
+		padding-left: 1.5rem;
+	}
+
+	@media screen and (max-width: 500px) {
+		@include span(12);
+		margin-bottom: 3rem;
+	}
+}
+
+.support__list {
+	@include span(3 of 6);
+	list-style: none;
+
+	@media screen and (max-width: 500px) {
+		@include span(6 of 12);
+	}
+}
+
+.list__2 {
+	@include span(3 of 6 last);
+
+	@media screen and (max-width: 500px) {
+		@include span(6 of 12 last);
+	}
+}
+
+.support__link {
+		color: $main-gray;
+		font-size: 1.4rem;
+		line-height: 2rem;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+}
+
+.contactUs {
+	@include span(3 last)
+
+	@media screen and (max-width: 1200px) {
+		padding-right: 1.5rem;
+	}
+
+	@media screen and (max-width: 800px) {
+		@include span(6 last)
+
+	}
+
+	@media screen and (max-width: 500px) {
+		@include span(12);
+		padding-left: 1.5rem;
+	}
+}
+
+.contactUs-email,
+.contactUs-text {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	padding: 1rem 1.8rem;
+	width: 100%;
+	margin-bottom: 2rem;
+	border: none;
+	font-family: $font-main;
+	color: $main-gray;
+}
+
+.contactUs-btn {
+	border: none;
+	text-transform: uppercase;
+	background: $main-red;
+	color: $white-text;
+	font-size: 1.2rem;
+	padding: 1rem 1.8rem;
+	cursor: pointer;
+}
